@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Interativo de Navegação no Monday.com</title>
+    <style>
+        /* --- Estilos Gerais --- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* --- Container Principal --- */
+        .infographic-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2c2c38;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            text-align: center;
+            border-bottom: 1px solid #4f4f6a;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #a0a0b8;
+        }
+
+        /* --- Estrutura dos Passos --- */
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #20202a;
+            border-radius: 10px;
+            border: 1px solid #4f4f6a;
+        }
+
+        .step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        /* --- Conteúdo de cada Passo --- */
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h2 {
+            font-size: 1.8em;
+            color: #00aaff;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .step-content p, .step-content ul {
+            line-height: 1.6;
+            font-size: 1em;
+        }
+        .step-content ul {
+            padding-left: 20px;
+        }
+        .step-content li {
+            margin-bottom: 10px;
+        }
+
+        /* --- Imagens Clicáveis--- */
+        .step-image {
+            flex: 1.2;
+            text-align: center;
+        }
+
+        .step-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid #555;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Indica que a imagem é clicável */
+        }
+        
+        .step-image img:hover {
+            transform: scale(1.03);
+            border-color: #00aaff;
+        }
+        
+        /* --- Conector Visual --- */
+        .connector {
+            text-align: center;
+            font-size: 2.5em;
+            color: #00aaff;
+            margin: -20px 0;
+        }
+
+        /* --- Estilos do Modal (Zoom da Imagem) --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 85vh;
+            animation-name: zoom;
+            animation-duration: 0.4s;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 15px 0;
+        }
+        
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .step, .step:nth-child(even) {
+                flex-direction: column;
+            }
+            .step-content h2 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="infographic-container">
+        <header>
+            <h1>Guia Interativo de Navegação no Monday.com</h1>
+            <p>Aprenda a navegar dos projetos macro às tarefas micro com este passo a passo.</p>
+        </header>
+
+        <main>
+            <section class="step">
+                <div class="step-content">
+                    <h2>Passo 0: Conhecendo a Estrutura Organizacional</h2>
+                    <p>Antes de começar, é importante entender a hierarquia dos elementos na plataforma:</p>
+                     <ul>
+                        <li><strong>Visão Geral:</strong> O portfólio executivo de todos os produtos.</li>
+                        <li><strong>Contexto (Quadro):</strong> A divisão de trabalho por times (ERP, Core, PDV's).</li>
+                        <li><strong>Produto (Grupo):</strong> Grupos de trabalho focados em partes específicas do produto.</li>
+                        <li><strong>Tarefa:</strong> Uma necessidade do usuário, descrita como User Story.</li>
+                        <li><strong>Subelemento:</strong> Pequenas tarefas que, juntas, completam a Tarefa.</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="Imagem 5.png" alt="Documento mostrando a estrutura organizacional e a nomenclatura dos elementos no Monday.com.">
+                </div>
+            </section>
+            
+            <div class="connector">▼</div>
+
+            <section class="step">
+                <div class="step-content">
+                    <h2>Passo 1: Acessando a Plataforma</h2>
+                    <p>Ao entrar no Monday, localize no menu à esquerda a <strong>Área de Trabalho</strong> (ex: ROADMAP) e clique no quadro principal, a <strong>"Visão Geral"</strong>, para ter o panorama de todos os projetos.</p>
+                </div>
+                <div class="step-image">
+                    <img src="Imagem 1.png" alt="Página inicial do Monday.com mostrando as áreas de trabalho e quadros.">
+                </div>
+            </section>
+
+            <div class="connector">▼</div>
+
+            <section class="step">
+                <div class="step-content">
+                    <h2>Passo 2: Entendendo a Visão Geral</h2>
+                    <p>A <strong>"Visão Geral"</strong> centraliza o status de todos os projetos. Cada linha é um time (Time ERP, Time PDV's, etc.) e mostra indicadores como saúde do projeto, progresso e cronograma.</p>
+                </div>
+                <div class="step-image">
+                    <img src="Imagem 2.png" alt="Quadro Visão Geral com uma lista de projetos e seus status.">
+                </div>
+            </section>
+            
+            <div class="connector">▼</div>
+
+            <section class="step">
+                <div class="step-content">
+                    <h2>Passo 3: Detalhando um Projeto (Visão Macro)</h2>
+                    <p>Ao clicar em um projeto, você acessa seu painel detalhado. Aqui você vê o progresso geral e o <strong>Roadmap</strong>, um cronograma visual (gráfico de Gantt) com as principais entregas e prazos.</p>
+                </div>
+                <div class="step-image">
+                    <img src="Imagem 3.png" alt="Dashboard de um projeto específico, mostrando progresso e um cronograma Gantt.">
+                </div>
+            </section>
+
+            <div class="connector">▼</div>
+
+            <section class="step">
+                <div class="step-content">
+                    <h2>Passo 4: Aprofundando nas Tarefas (Visão Micro)</h2>
+                    <p>Para o máximo de detalhes, acesse o quadro do time pelo menu. Ali estão as tarefas (elementos) e subtarefas (subelementos) com responsáveis e status, que compõem as entregas do Roadmap.</p>
+                </div>
+                <div class="step-image">
+                    <img src="Imagem 4.png" alt="Quadro de um time com a lista detalhada de tarefas e subelementos.">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+    <script>
+        // Pega o elemento modal
+        var modal = document.getElementById("myModal");
+
+        // Pega todos as imagens com a classe 'step-image' e adiciona o evento de clique
+        var images = document.querySelectorAll(".step-image img");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        
+        images.forEach(img => {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // Pega o elemento <span> que fecha o modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Quando o usuário clica no <span> (x), fecha o modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+        
+        // Quando o usuário clica em qualquer lugar fora da imagem, fecha o modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
